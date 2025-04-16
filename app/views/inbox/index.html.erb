@@ -1,0 +1,15 @@
+<h2>Inbox</h2>
+
+<h2>New</h2>
+<% if @new_messages.any? %>
+  <% @new_messages.each do |message| %>
+    <%= link_to message.subject, message_show_path(message), data: { turbo: true } %>
+  <% end %>
+<% end %>
+
+<h2>Previously seen</h2>
+<% if @seen_messages.any?%>
+  <% @seen_messages.each do |message| %>
+    <%= link_to message.subject, message_show_path(message), data: { turbo: true } %>
+  <% end %>
+<% end %>
