@@ -28,7 +28,7 @@ class MessageHelperTest < ActionView::TestCase
 
   test "summarize_body truncates long body" do
     long_text = "Lorem ipsum dolor sit amet " * 10
-    assert_operator summarize_body(long_text).length, :<=, 80
+    assert_operator summarize_body(long_text).length, :<=, 95
   end
 
   test "summarize_body handles nil body" do

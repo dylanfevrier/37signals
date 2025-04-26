@@ -35,4 +35,28 @@ class MessageControllerTest < ActionDispatch::IntegrationTest
 
     assert_select "h3", text: "Previously Seen", count: 0
   end
+
+  test "shows and marks an unread message as read" do
+    get message_show_path(@unread_message)
+    assert_response :success
+
+    assert_select "h1", text: @unread_message.subject
+
+    @unread_message.reload
+
+    assert_not_nil @unread_message.read_at
+  end
+
+  test "shows a read message without changing read_at" do
+    previous_read_at = @read_message.read_at
+
+    get message_show_path(@read_message)
+    assert_response :success
+
+    assert_select "h1", text: @read_message.subject
+
+    @read_message.reload
+
+    assert_equal @read_message.read_at, previous_read_at
+  end
 end

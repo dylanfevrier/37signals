@@ -1,26 +1,28 @@
-:root {
-    --rgb-white: 255, 255, 255;
-    --rgb-almost-black: 35, 28, 51;
-    --rgb-mint: 157, 255, 236;
-    --rgb-blue: 0, 116, 228;
-    --rgb-purple: 85, 34, 250;
-    --rgb-medium-gray: 226, 221, 215;
-    --rgb-background: var(--rgb-white);
-    --rgb-ink: var(--rgb-almost-black);
+@layer base {
+    :root {
+        --rgb-white: 255, 255, 255;
+        --rgb-almost-black: 35, 28, 51;
+        --rgb-mint: 157, 255, 236;
+        --rgb-blue: 0, 116, 228;
+        --rgb-purple: 85, 34, 250;
+        --rgb-medium-gray: 226, 221, 215;
+        --rgb-background: var(--rgb-white);
+        --rgb-ink: var(--rgb-almost-black);
 
-    --color-primary: rgb(var(--rgb-mint));
-    --color-secondary: rgb(var(--rgb-blue));
-    --color-tertiary: rgb(var(--rgb-purple));
+        --color-primary: rgb(var(--rgb-mint));
+        --color-secondary: rgb(var(--rgb-blue));
+        --color-tertiary: rgb(var(--rgb-purple));
 
-    --color-bg--main: rgb(var(--rgb-background));
-    --color-bg--main-thick: rgba(var(--rgb-background), 0.95);
-    --color-bg--surface-glint: rgba(var(--rgb-medium-gray), 0.15);
-    --color-bg--secondary-glint: rgba(var(--rgb-blue), 0.05);
+        --color-bg--main: rgb(var(--rgb-background));
+        --color-bg--main-thick: rgba(var(--rgb-background), 0.95);
+        --color-bg--surface-glint: rgba(var(--rgb-medium-gray), 0.15);
+        --color-bg--secondary-glint: rgba(var(--rgb-blue), 0.05);
 
-    --color-shadow: rgba(var(--rgb-medium-gray), 0.5);
+        --color-shadow: rgba(var(--rgb-medium-gray), 0.5);
 
-    --color-text: rgb(var(--rgb-ink));
-    --color-text-subtitle: rgba(var(--rgb-ink), 0.66);
+        --color-text: rgb(var(--rgb-ink));
+        --color-text-subtitle: rgba(var(--rgb-ink), 0.66);
 
-    --colorize-blue: invert(37%) sepia(90%) saturate(6264%) hue-rotate(198deg) brightness(101%) contrast(101%);
+        --colorize-blue: invert(37%) sepia(90%) saturate(6264%) hue-rotate(198deg) brightness(101%) contrast(101%);
+    }
 }

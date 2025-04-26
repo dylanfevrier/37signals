@@ -14,6 +14,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_16_165414) do
   create_table "messages", force: :cascade do |t|
     t.string "from_name", null: false
     t.string "from_email", null: false
+    t.string "to_name", null: false
     t.string "to_email", null: false
     t.string "subject", null: false
     t.text "body"

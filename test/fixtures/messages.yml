@@ -1,6 +1,7 @@
 received_unread:
   from_name: John
   from_email: john@domain.com
+  to_name: "Dylan Fevrier"
   to_email: dylan@domain.com
   subject: "Email received"
   body: "Hey!"
@@ -8,6 +9,7 @@ received_unread:
 received_read:
   from_name: John
   from_email: john@domain.com
+  to_name: "Dylan Fevrier"
   to_email: dylan@domain.com
   subject: "Email received"
   body: "Hey!"
@@ -16,6 +18,7 @@ received_read:
 sent:
   from_name: Dylan
   from_email: dylan@domain.com
+  to_name: "John Doe"
   to_email: john@domain.com
   subject: "Email sent"
   body: "Hey!"

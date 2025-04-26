@@ -21,6 +21,7 @@ module MessageHelper
   end
 
   def summarize_body(body)
-    truncate(body.to_s, length: 80)
+    clean_body = body.to_s.gsub(/\\n|\n/, " ").squeeze(" ")
+    truncate(clean_body, length: 95)
   end
 end

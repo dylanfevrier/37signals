@@ -1,4 +1,48 @@
-<h1 class="text--center"><%= @message.subject %></h1>
+<header class="entry__heading">
+  <div class="avatar-group">
+    <div class="avatar avatar--small">
+      <%= initials(@message.to_name) %>
+    </div>
+    <div class="avatar avatar--small">
+      <%= initials(@message.from_name) %>
+    </div>
+  </div>
+  <h1 class="text--center">
+    <%= @message.subject %>
+  </h1>
+</header>
 
-<div class="sheet sheet--vh sheet--inbox">
-</div>
+
+<main class="entry__wrapper">
+  <div class="sheet sheet--entry">
+    <header class="entry__content-heading">
+      <div class="entry__avatar">
+        <div class="avatar">
+          <%= initials(@message.from_name) %>
+        </div>
+      </div>
+      <div class="entry__meta">
+        <div class="entry__participants">
+          <strong class="entry__sender">
+            <span><%= @message.from_name %></span>
+            <span class="text--normal text--small text--subtitle">&lt;<%= @message.from_email %>&gt;</span>
+          </strong>
+          <div class="entry__recipient text--subtitle text--small">
+            to
+            <span><%= @message.to_name %></span>
+            <span>
+              <span>&lt;</span><%= @message.to_email %><span>&gt;</span>
+            </span>
+          </div>
+        </div>
+        <time class="text--subtitle text--small">
+          <%= display_date(@message.created_at) %>
+        </time>
+      </div>
+    </header>
+
+    <article class="entry__body">
+      <%= simple_format(@message.body.gsub('\n', "\n")) %>
+    </article>
+  </div>
+</main>
