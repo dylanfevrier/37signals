@@ -1,0 +1,24 @@
+<article class="inbox__message" data-seen="<%= message.read? %>">
+  <div class="inbox__message__body">
+    <div class="inbox__message__avatar avatar">
+      <%= initials(message.from_name) %>
+    </div>
+    <%= link_to message_show_path(message), data: { turbo: true }, class: "inbox__message__link" do %>
+
+      <div class="inbox__message__content">
+        <h3 class="inbox__message__headline hdg--medium">
+          <span class="inbox__message__title">
+            <%= message.subject %>
+          </span>
+        </h3>
+        <p class="inbox__message__line text--subtitle text--x-small">
+          <span class="message__author"><%= message.from_name %></span>
+          <span class="inbox__message__summary"><%= summarize_body(message.body) %></span>
+        </p>
+      </div>
+      <time class="inbox__message__time" datetime="<%= message.created_at.iso8601 %>">
+        <%= display_date(message.created_at) %>
+      </time>
+    <% end %>
+  </div>
+</article>

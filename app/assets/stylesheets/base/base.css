@@ -1,0 +1,62 @@
+@layer base, components;
+
+@layer base {
+    :root {
+        --content-width: 98rem;
+        --body-padding: 6.4rem;
+        --navbar-padding: 5.8rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    [hidden] { display: none !important; }
+
+    html,
+    body {
+        margin: 0;
+    }
+
+    html {
+        background: var(--color-bg--main);
+        color: var(--color-text);
+        font-family: var(--font-family);
+        font-size: var(--font-size-base);
+        line-height: 1.4;
+
+        -webkit-text-size-adjust: 100%;
+
+        scroll-padding-top: var(--navbar-padding);
+        scroll-padding-bottom: 7rem;
+    }
+
+    body {
+        font-size: var(--font-size-medium);
+        padding: var(--navbar-padding) 0 var(--body-padding);
+        margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+
+        &.display--standalone { padding-top: 0; }
+    }
+
+    main:focus,
+    summary:focus { outline: none; }
+
+    a { -webkit-tap-highlight-color: transparent; }
+
+    figure {
+        display: inherit;
+        margin: 0;
+    }
+
+    button {
+        margin: 0;
+        border: 0;
+        color: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+    }
+}

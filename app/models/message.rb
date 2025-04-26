@@ -5,10 +5,14 @@ class Message < ApplicationRecord
   scope :read, -> { where.not(read_at: nil) }
 
   def mark_as_read!
-    update(read_at: Time.current) unless read?
+    update!(read_at: Time.current) if unread?
   end
 
   def read?
     read_at.present?
+  end
+
+  def unread?
+    !read?
   end
 end

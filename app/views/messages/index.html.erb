@@ -1,0 +1,36 @@
+<div class="sheet sheet--vh sheet--inbox">
+  <header class="relative">
+    <h1 class="text--center">Imbox</h1>
+  </header>
+
+  <div class="inbox">
+    <div class="inbox__message inbox__heading">
+      <h2 class="inbox__heading__title hdg--divider">
+        <% if @has_unread_messages %>
+          <span class="hdg--caps">New for you</span>
+        <% end %>
+      </h2>
+
+      <% unless @has_unread_messages %>
+        <div class="inbox__heading__nothing-new">
+          <%= image_tag "icons/sparkle.svg", width: 25, height: 25 %>
+          <h2 class="hdg--x-small text--normal">Nothing new for you.</h2>
+        </div>
+      <%  end %>
+      <div></div>
+    </div>
+
+    <% has_shown_separator = false %>
+
+    <% @messages.each do |message| %>
+      <% if message.read? && !has_shown_separator %>
+        <div class="inbox__message inbox__heading inbox__heading__previously-seen" data-seen="true">
+          <h2 class="inbox__heading__title hdg--caps">Previously seen</h2>
+        </div>
+        <% has_shown_separator = true %>
+      <% end %>
+
+      <%= render partial: "messages/inbox_message", locals: { message: message } %>
+    <% end %>
+  </div>
+</div>

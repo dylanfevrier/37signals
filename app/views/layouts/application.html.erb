@@ -23,6 +23,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar">
+      <div class="relative">
+        <div class="navbar__icons">
+          <div class="navbar__icon"></div>
+        </div>
+        <div class="navbar__logo"></div>
+      </div>
+    </nav>
+
+    <main class="page page--full-width">
+      <div class="page__content">
+          <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
