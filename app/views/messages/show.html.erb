@@ -1,6 +1,10 @@
+<% content_for :back_button do %>
+  <%= render "messages/back_button" %>
+<% end %>
+
 <header class="entry__heading">
   <div class="avatar-group">
-    <div class="avatar avatar--small">
+    <div class="avatar avatar--small avatar--orange">
       <%= initials(@message.to_name) %>
     </div>
     <div class="avatar avatar--small">
@@ -11,7 +15,6 @@
     <%= @message.subject %>
   </h1>
 </header>
-
 
 <main class="entry__wrapper">
   <div class="sheet sheet--entry">
@@ -30,9 +33,7 @@
           <div class="entry__recipient text--subtitle text--small">
             to
             <span><%= @message.to_name %></span>
-            <span>
-              <span>&lt;</span><%= @message.to_email %><span>&gt;</span>
-            </span>
+            <span>&lt;<%= @message.to_email %>&gt;</span>
           </div>
         </div>
         <time class="text--subtitle text--small">

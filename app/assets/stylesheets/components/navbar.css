@@ -12,6 +12,24 @@
         background: var(--color-bg--main-thick);
     }
 
+    .navbar__content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: calc(var(--content-width) + 15rem);
+    }
+
+    .navbar__left {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: absolute;
+        left: 0.4em;
+        top: 0;
+    }
+
     .navbar__logo {
         display: flex;
         align-items: center;

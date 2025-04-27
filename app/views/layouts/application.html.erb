@@ -23,12 +23,19 @@
   </head>
 
   <body>
-    <nav class="navbar">
-      <div class="relative">
-        <div class="navbar__icons">
-          <div class="navbar__icon"></div>
+    <nav class="navbar text--small">
+      <div class="navbar__content">
+        <div class="navbar__left">
+          <% if content_for?(:back_button) %>
+            <%= yield :back_button %>
+          <% end %>
         </div>
-        <div class="navbar__logo"></div>
+        <div class="relative">
+          <div class="navbar__icons">
+            <div class="navbar__icon"></div>
+          </div>
+          <div class="navbar__logo"></div>
+        </div>
       </div>
     </nav>
 

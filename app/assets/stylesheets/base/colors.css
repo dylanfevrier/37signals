@@ -6,12 +6,17 @@
         --rgb-blue: 0, 116, 228;
         --rgb-purple: 85, 34, 250;
         --rgb-medium-gray: 226, 221, 215;
+        --rgb-medium-blue: 124, 232, 251;
+        --rgb-medium-orange: 244, 165, 34;
         --rgb-background: var(--rgb-white);
         --rgb-ink: var(--rgb-almost-black);
 
         --color-primary: rgb(var(--rgb-mint));
         --color-secondary: rgb(var(--rgb-blue));
         --color-tertiary: rgb(var(--rgb-purple));
+        --color-medium-blue: rgb(var(--rgb-medium-blue));
+        --color-medium-orange: rgb(var(--rgb-medium-orange));
+        --color-almost-black: rgb(var(--rgb-almost-black));
 
         --color-bg--main: rgb(var(--rgb-background));
         --color-bg--main-thick: rgba(var(--rgb-background), 0.95);
