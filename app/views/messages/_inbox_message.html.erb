@@ -3,7 +3,7 @@
     <div class="inbox__message__avatar avatar">
       <%= initials(message.from_name) %>
     </div>
-    <%= link_to message_show_path(message), data: { turbo: true }, class: "inbox__message__link" do %>
+    <%= link_to message_show_path(message), data: { turbo: false }, class: "inbox__message__link" do %>
 
       <div class="inbox__message__content">
         <h3 class="inbox__message__headline hdg--medium">
