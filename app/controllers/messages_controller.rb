@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [ :show ]
+
   def index
-    @messages = Message.order(read_at: :asc, created_at: :desc)
+    @messages = Message.order(Arel.sql("read_at IS NULL DESC, created_at DESC"))
     @has_unread_messages = @messages.any?(&:unread?)
   end
 
